@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliferous Revival Hub | Official Ministry Profile & Catalogue</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- COLOR PALETTE & VARIABLES --- */
+        :root {
+            --pink: #FF66B2;
+            --skyblue: #5CE1E6;
+            --white: #FFFFFF;
+            --dark: #121A21;
+            --muted-dark: #1E293B;
+            --light-pink: #FFF0F6;
+            --light-blue: #EAFBFC;
+            --gray-bg: #F8FAFC;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* --- RESET & BASE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--white);
+            color: var(--dark);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: var(--dark);
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- STICKY NAVIGATION BAR --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 6px 35px rgba(0, 0, 0, 0.04);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+        }
+        .brand-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        /* EXTRA LARGE HIGH-VISIBILITY BRAND LOGO IMAGE */
+        .logo-img {
+            height: 180px;
+            width: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--pink);
+            box-shadow: 0 8px 24px rgba(255, 102, 178, 0.25);
+            transition: var(--transition);
+        }
+        .brand-wrapper:hover .logo-img {
+            transform: scale(1.03);
+            border-color: var(--skyblue);
+        }
+        /* ENLARGED ULTRA-READABLE BRAND TYPOGRAPHY */
+        .logo-text {
+            font-size: 2.2rem;
+            color: var(--pink);
+            letter-spacing: 2px;
+            font-weight: 900;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.1;
+        }
+        .logo-text span {
+            color: var(--skyblue);
+            display: block;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            margin-top: 4px;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .nav-item {
+            font-weight: 700;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 8px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            transition: var(--transition);
+        }
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--pink), var(--skyblue));
+            transition: var(--transition);
+        }
+        .nav-item:hover::after {
+            width: 100%;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--pink);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 340px 24px 140px; /* Increased top padding to accommodate the larger header logo */
+            background: linear-gradient(135deg, var(--light-pink) 0%, #FFFFFF 50%, var(--light-blue) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,102,178,0.15) 0%, transparent 70%);
+            top: -50px;
+            left: -50px;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(92,225,230,0.15) 0%, transparent 70%);
+            bottom: -50px;
+            right: -50px;
+        }
+        .hero-tagline {
+            color: var(--pink);
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+        .hero-sub {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--skyblue);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .hero-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--pink), var(--skyblue));
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 6px 20px rgba(255, 102, 178, 0.35);
+            transition: var(--transition);
+        }
+        .hero-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(92, 225, 230, 0.5);
+        }
+
+        /* --- SCRIPTURE CALLOUT --- */
+        .scripture-bar {
+            background-color: var(--gray-bg);
+            border-top: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+            text-align: center;
+            padding: 40px 24px;
+        }
+        .scripture-text {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--muted-dark);
+            max-width: 900px;
+            margin: 0 auto 10px;
+        }
+        .scripture-ref {
+            font-weight: 700;
+            color: var(--pink);
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- GLOBAL LAYOUT MACHINERY --- */
+        section {
+            padding: 100px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+            position: relative;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 5px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--pink), var(--skyblue));
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #64748B;
+            margin-bottom: 65px;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        /* --- WHO WE ARE & IDENTITY --- */
+        .info-card {
+            background-color: var(--white);
+            padding: 45px;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+            border: 1px solid #F1F5F9;
+        }
+        .border-pink { border-top: 6px solid var(--pink); }
+        .border-blue { border-top: 6px solid var(--skyblue); }
+        
+        .wing-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+            text-align: center;
+        }
+        .wing-item {
+            background-color: var(--gray-bg);
+            padding: 15px 10px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--muted-dark);
+            border: 1px solid #E2E8F0;
+        }
+
+        /* --- FOUNDER BIOGRAPHY --- */
+        .founder-container {
+            background: linear-gradient(180deg, var(--light-pink) 0%, rgba(255,255,255,0) 100%);
+            border-radius: 32px;
+            padding: 80px 40px;
+        }
+        .founder-visual {
+            text-align: center;
+            position: relative;
+        }
+        .founder-img {
+            width: 320px;
+            height: 320px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 50%;
+            border: 5px solid var(--pink);
+            box-shadow: 0 25px 50px rgba(255, 102, 178, 0.25);
+            display: inline-block;
+        }
+        .founder-bio-list {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .founder-bio-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .founder-bio-list i {
+            color: var(--skyblue);
+            font-size: 1.1rem;
+        }
+
+        /* --- PILLARS & VMV CARDS --- */
+        .vmv-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .pillar-box {
+            background: var(--gray-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 4px solid var(--pink);
+            margin-bottom: 16px;
+        }
+
+        /* --- FIVE MOUNTAINS OF IMPACT --- */
+        .mountain-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .mountain-strip {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 20px;
+            padding: 35px;
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+            transition: var(--transition);
+        }
+        .mountain-strip:hover {
+            transform: translateX(10px);
+            border-color: var(--pink);
+            box-shadow: 0 10px 30px rgba(255,102,178,0.05);
+        }
+        .mountain-icon {
+            background: var(--light-blue);
+            color: var(--skyblue);
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+        .mountain-strip:nth-child(even) .mountain-icon {
+            background: var(--light-pink);
+            color: var(--pink);
+        }
+        .mountain-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .mountain-focus-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .focus-tag {
+            background: var(--gray-bg);
+            border: 1px solid #E2E8F0;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        /* --- CORE VALUES & BELIEFS --- */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        .value-card {
+            background: var(--white);
+            border: 1px solid #F1F5F9;
+            padding: 35px 25px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--pink), var(--skyblue));
+        }
+        .value-card h4 {
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            color: var(--muted-dark);
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+        .beliefs-block {
+            background-color: var(--dark);
+            color: var(--white);
+            border-radius: 24px;
+            padding: 60px;
+            margin-top: 80px;
+        }
+        .beliefs-block h3 {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+        .beliefs-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .belief-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            font-size: 1.05rem;
+        }
+        .belief-item i {
+            color: var(--pink);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        /* --- ASSIGNMENT & TARGETS --- */
+        .assignment-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .target-box {
+            background: linear-gradient(135deg, #FFF, var(--gray-bg));
+            border: 1px solid #E2E8F0;
+            padding: 30px 20px;
+            border-radius: 16px;
+            text-align: center;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+            transition: var(--transition);
+        }
+        .target-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--skyblue);
+            color: var(--pink);
+        }
+
+        /* --- PROPHETIC DECLARATION BANNER --- */
+        .declaration-banner {
+            background: linear-gradient(135deg, var(--pink) 0%, var(--skyblue) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 24px;
+            position: relative;
+        }
+        .declaration-banner h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+        .declaration-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        .declaration-line {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+        }
+        .declaration-badge {
+            display: inline-block;
+            margin-top: 30px;
+            background-color: rgba(255,255,255,0.2);
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        /* --- FOOTER & CONNECT --- */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 80px 24px 30px;
+            text-align: center;
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            text-align: left;
+        }
+        .footer-brand h3 { color: var(--white); font-size: 1.8rem; margin-bottom: 15px;}
+        .footer-brand p { color: #94A3B8; font-size: 1rem; max-width: 500px;}
+        .footer-contact h4 { color: var(--white); font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase;}
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .footer-socials a {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        .footer-socials a:hover {
+            background-color: var(--pink);
+            transform: translateY(-5px);
+            color: white;
+        }
+
+        /* --- FLOATING ACTIONS SIDEBAR --- */
+        .floating-socials {
+            position: fixed;
+            left: 24px;
+            bottom: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            z-index: 999;
+        }
+        .float-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+            transition: var(--transition);
+        }
+        .float-btn:hover {
+            transform: scale(1.12) translateX(6px);
+        }
+        .f-whatsapp { background-color: #25D366; }
+        .f-facebook { background-color: #1877F2; }
+        .f-youtube { background-color: #FF0000; }
+        .f-tiktok { background-color: #000000; }
+
+        /* --- CHATBOT WIDGET FRAME --- */
+        .chat-widget {
+            position: fixed;
+            right: 24px;
+            bottom: 35px;
+            z-index: 1000;
+        }
+        .chat-button {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), var(--skyblue));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            cursor: pointer;
+            box-shadow: 0 6px 30px rgba(255, 102, 178, 0.4);
+            transition: var(--transition);
+        }
+        .chat-button:hover {
+            transform: scale(1.06) rotate(8deg);
+        }
+        .chat-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 340px;
+            height: 460px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.16);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #E2E8F0;
+        }
+        .chat-header {
+            background: linear-gradient(90deg, var(--pink), var(--skyblue));
+            color: white;
+            padding: 18px;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+        }
+        .chat-body {
+            flex: 1;
+            padding: 18px;
+            overflow-y: auto;
+            background-color: #F8FAFC;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-msg {
+            margin-bottom: 14px;
+            padding: 12px 16px;
+            border-radius: 14px;
+            max-width: 85%;
+            line-height: 1.5;
+        }
+        .msg-bot {
+            background-color: #fff;
+            color: var(--dark);
+            align-self: flex-start;
+            border-bottom-left-radius: 3px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid #F1F5F9;
+        }
+        .msg-user {
+            background-color: var(--pink);
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+            border-bottom-right-radius: 3px;
+        }
+        .chat-footer {
+            padding: 12px;
+            display: flex;
+            background-color: white;
+            border-top: 1px solid #E2E8F0;
+            align-items: center;
+        }
+        .chat-input {
+            flex: 1;
+            padding: 10px 16px;
+            border: 1px solid #E2E8F0;
+            border-radius: 25px;
+            outline: none;
+            font-size: 0.9rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .chat-send {
+            background: none;
+            border: none;
+            color: var(--skyblue);
+            font-size: 1.3rem;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .chat-send:hover { color: var(--pink); }
+
+        /* --- RESPONSIVE OPTIMIZATION --- */
+        @media (max-width: 968px) {
+            .grid-2, .vmv-row, .beliefs-list, .assignment-row {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 { font-size: 2.6rem; }
+            .hero { padding-top: 300px; }
+            .logo-img { height: 130px; width: 130px; }
+            .logo-text { font-size: 1.8rem; }
+            .logo-text span { font-size: 1.2rem; }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                padding: 24px;
+                box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+                text-align: center;
+                gap: 15px;
+            }
+            .nav-menu.active { display: flex; }
+            .menu-toggle { display: block; }
+            .floating-socials {
+                left: auto;
+                right: 24px;
+                bottom: 115px;
+            }
+        }
+        @media (max-width: 640px) {
+            .values-grid { grid-template-columns: 1fr; }
+            .wing-features { grid-template-columns: 1fr; }
+            .mountain-strip {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .founder-img { width: 260px; height: 260px; }
+            .brand-wrapper { gap: 12px; }
+            .logo-img { height: 90px; width: 90px; }
+            .logo-text { font-size: 1.35rem; letter-spacing: 1px; }
+            .logo-text span { font-size: 0.95rem; letter-spacing: 2px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION HEADER WITH MAXIMIZED HIGH-IMPACT LOGO -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand-wrapper"> 
+                "Aliferous Revival Hub Logo"
+                <span class="logo-text">ALIFEROUS <span>REVIVAL HUB</span></span>
+            </a>
+               
+            <div class="menu-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-menu" id="nav-list">
+                <li><a href="#" class="nav-item">Home</a></li>
+                <li><a href="#about" class="nav-item">Who We Are</a></li>
+                <li><a href="#founder" class="nav-item">Founder</a></li>
+                <li><a href="#pillars" class="nav-item">Pillars & Vision</a></li>
+                <li><a href="#spheres" class="nav-item">Spheres of Impact</a></li>
+                <li><a href="#values" class="nav-item">Beliefs</a></li>
+                <li><a href="#connect" class="nav-item">Connect</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO HOME BANNER -->
+    <section class="hero">
+        <p class="hero-tagline">Rising with wings • Carrying revival • Transforming territories</p>
+        <h1>ALIFEROUS REVIVAL HUB</h1>
+        <p class="hero-sub">Built in Fire. Sent to Transform.</p>
+        <a href="#about" class="hero-btn">View Ministry Profile</a>
+    </section>
+
+    <!-- SCRIPTURE BAR FOUNDATION -->
+    <div class="scripture-bar">
+        <p class="scripture-text">“But they that wait upon the Lord shall renew their strength; they shall mount up with wings as eagles…”</p>
+        <p class="scripture-ref">— Isaiah 40:31</p>
+    </div>
+
+    <!-- WHO WE ARE & IDENTITY SECTIONS -->
+    <section id="about">
+        <h2 class="section-title">Who We Are</h2>
+        <p class="section-subtitle">An apostolic and structural framework built to awaken generations and restore global altars</p>
+        
+        <div class="grid-2">
+            <div class="info-card border-pink">
+                <p><strong>ALIFEROUS REVIVAL HUB</strong> is a revival and transformational movement committed to raising a generation that carries God’s presence, walks in divine purpose, and influences systems for the advancement of the Kingdom of God.</p>
+                <br>
+                <p>We are not merely building structural gatherings—we are active building carriers of revival, reformers of systemic culture, and alignment voices for territories. Our divine mandate is deep-rooted in structural discipleship, spiritual precision, and systemic governance.</p>
+            </div>
+            
+            <div class="info-card border-blue">
+                <h3 style="margin-bottom: 12px;">The Meaning of <span style="background: linear-gradient(90deg, var(--pink), var(--skyblue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Aliferous</span></h3>
+                <p>The word <em>ALIFEROUS</em> is a Greek-inspired identity term meaning <strong>“to have wings.”</strong> Wings represent layout elevation, swift movement, complete dominion, velocity, strength, vision, and divine empowerment.</p>
+                
+                <div class="wing-features">
+                    <div class="wing-item">Elevation</div>
+                    <div class="wing-item">Dominion</div>
+                    <div class="wing-item">Speed</div>
+                    <div class="wing-item">Strength</div>
+                    <div class="wing-item">Vision</div>
+                    <div class="wing-item">Movement</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDER MANDATE SECTION WITH PHOTO -->
+    <section id="founder">
+        <div class="founder-container">
+            <h2 class="section-title">The Founder & Visionary</h2>
+            <p class="section-subtitle">An apostolic voice raised to anchor territorial awakening and leadership mentorship</p>
+            
+            <div class="grid-2">
+                <div class="founder-visual">"Apostle Karami Evans Joshua" 
+                    <h3 style="margin-top: 25px; font-size: 2rem; letter-spacing: -0.5px;">Apostle Karami Evans Joshua</h3>
+                    <p style="color: var(--pink); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; margin-top: 5px;">Founder & General Overseer</p>
+                </div>
+                
+                <div class="info-card" style="border-left: 5px solid var(--pink);">
+                    <p>The ministry was founded by <strong>Apostle Karami Evans Joshua</strong>, a passionate servant of God carrying a structural mandate to raise revivalists, kingdom leaders, and system transformers who will influence territories for the glory of God.</p>
+                    <br>
+                    <p>He is a passionate mentor with a critical burden to see this generation encounter God genuinely and step into precise structural purpose. His lifestyle strategy is centered completely on intense prayer pillars, systemic awakening, character development, and true territorial transformation.</p>
+                    
+                    <ul class="founder-bio-list">
+                        <li><i class="fas fa-check-circle"></i> Restoring prayer altars across institutions</li>
+                        <li><i class="fas fa-check-circle"></i> Training spiritually mature and grounded leaders</li>
+                        <li><i class="fas fa-check-circle"></i> Driving revival beyond standard pulpit domains</li>
+                        <li><i class="fas fa-check-circle"></i> Equipping generations with territorial authority</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PILLARS, VISION & MISSION -->
+    <section id="pillars">
+        <h2 class="section-title">Pillars & Directives</h2>
+        <p class="section-subtitle">Our structural operating blueprint designed for global spiritual output</p>
+        
+        <div class="grid-2">
+            <div>
+                <div class="pillar-box">
+                    <h4>Revival</h4>
+                    <p style="font-size: 0.9rem; color: #475569;">Restoring continuous spiritual hunger, brokenness, and deep intimacy with God.</p>
+                </div>
+                <div class="pillar-box" style="border-left-color: var(--skyblue);">
+                    <h4>Leadership</h4>
+                    <p style="font-size: 0.9rem; color: #475569;">Raising active transformational leaders built with verified kingdom character.</p>
+                </div>
+                <div class="pillar-box">
+                    <h4>Discipleship</h4>
+                    <p style="font-size: 0.9rem; color: #475569;">Building functional believers who are structurally stable and grounded in truth.</p>
+                </div>
+                <div class="pillar-box" style="border-left-color: var(--skyblue);">
+                    <h4>Kingdom Influence</h4>
+                    <p style="font-size: 0.9rem; color: #475569;">Impacting everyday secular frameworks with the cultural patterns of heaven.</p>
+                </div>
+            </div>
+            
+            <div class="vmv-row">
+                <div class="info-card border-pink" style="text-align: center; padding: 50px 20px;">
+                    <i class="fas fa-eye" style="font-size: 2.5rem; color: var(--pink); margin-bottom: 20px;"></i>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 15px;">OUR VISION</h3>
+                    <p style="font-weight: 700; color: var(--muted-dark); font-size: 1.1rem;">“Impacting Systems and Territories.”</p>
+                    <p style="font-size: 0.85rem; color: #64748B; margin-top: 10px;">To witness entire nations and structural environments overhauled through active alignment with God's layout authority.</p>
+                </div>
+                
+                <div class="info-card border-blue" style="text-align: center; padding: 50px 20px;">
+                    <i class="fas fa-scroll" style="font-size: 2.5rem; color: var(--skyblue); margin-bottom: 20px;"></i>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 15px;">OUR MISSION</h3>
+                    <p style="font-weight: 700; color: var(--muted-dark); font-size: 1.1rem;">“Built in Fire. Sent with Purpose.”</p>
+                    <p style="font-size: 0.85rem; color: #64748B; margin-top: 10px;">To design high-capacity spiritual structural hubs that train, refine, and dispatch fully aligned kingdom ambassadors globally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FIVE MOUNTAINS OF IMPACT -->
+    <section id="spheres" style="background-color: var(--gray-bg); border-radius: 40px; margin: 40px auto; max-width: 1160px;">
+        <h2 class="section-title">The Five Mountains of Impact</h2>
+        <p class="section-subtitle">Our defined spheres of structural execution and targeted alignment</p>
+        
+        <div class="mountain-container">
+            <div class="mountain-strip">
+                <div class="mountain-icon"><i class="fas fa-gavel"></i></div>
+                <div class="mountain-details">
+                    <h3>1. Government</h3>
+                    <p>Leadership is a direct divine responsibility. Through clean wisdom, functional integrity, and kingdom patterns, we seek to raise ethical leaders who inject righteous policies into administrative frameworks and executive decision rooms.</p>
+                    <div class="mountain-focus-grid">
+                        <span class="focus-tag">National Transformation</span>
+                        <span class="focus-tag">Accountability Blueprint</span>
+                        <span class="focus-tag">Righteous Policy Making</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mountain-strip">
+                <div class="mountain-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="mountain-details">
+                    <h3>2. Schools & Education</h3>
+                    <p>Young minds represent the functional future of global territories. ALIFEROUS REVIVAL HUB targets structural deployment within academic institutions, campuses, and schools to spark spiritual purity, leadership clarity, and absolute academic excellence.</p>
+                    <div class="mountain-focus-grid">
+                        <span class="focus-tag">Campus Revival Fire</span>
+                        <span class="focus-tag">Youth Mentorship Hubs</span>
+                        <span class="focus-tag">Purpose Discovery Path</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mountain-strip">
+                <div class="mountain-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="mountain-details">
+                    <h3>3. Business & Marketplace Industry</h3>
+                    <p>We classify the competitive corporate marketplace as an essential mission field. God is raising strategic marketplace ministers, creative entrepreneurs, and corporate operators who scale industries while establishing ethical dominance and biblical wealth patterns.</p>
+                    <div class="mountain-focus-grid">
+                        <span class="focus-tag">Kingdom Wealth Strategies</span>
+                        <span class="focus-tag">Ethical Corporate Dominion</span>
+                        <span class="focus-tag">Marketplace Innovation</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mountain-strip">
+                <div class="mountain-icon"><i class="fas fa-users"></i></div>
+                <div class="mountain-details">
+                    <h3>4. Society & Culture</h3>
+                    <p>Macroscopic transformation triggers when localized communities encounter divine truth, practical love, and structural revival resources. We process societal growth via strategic outdoor evangelism, compassionate social assistance, and open territorial conferences.</p>
+                    <div class="mountain-focus-grid">
+                        <span class="focus-tag">Community Restoration</span>
+                        <span class="focus-tag">Welfare & Compassion</span>
+                        <span class="focus-tag">Revival Assemblies</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mountain-strip">
+                <div class="mountain-icon"><i class="fas fa-home"></i></div>
+                <div class="mountain-details">
+                    <h3>5. Families</h3>
+                    <p>The familial home structure functions as the foundation block of structural national health. We actively enforce family healing blueprints, relational alignment frameworks, and persistent prayer practices to grow multi-generational stability.</p>
+                    <div class="mountain-focus-grid">
+                        <span class="focus-tag">Family Altar Restoration</span>
+                        <span class="focus-tag">Multi-generational Honor</span>
+                        <span class="focus-tag">Godly Lineage Framework</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 1. ADD THIS LIGHTBOX OVERLAY JUST BEFORE YOUR CLOSING </body> TAG -->
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+    <span class="close-lightbox">&times;</span>
+    <img id="lightbox-img" src="" alt="Expanded View">
+</div>
+
+<!-- 2. WRAP YOUR LOGO/IMAGES LIKE THIS TO ENABLE THE TAP-TO-OPEN FEATURE -->
+<a href="javascript:void(0)" onclick="openLightbox('file:///C:/Users/hannah wanjiru/OneDrive/Documents/aliferous logo.jpeg')">
+    
+</a>
+
+<!-- 3. ADD THIS CSS TO YOUR <style> BLOCK -->
+<style>
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .lightbox img {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+    .close-lightbox {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+    }
+</style>
+
+<!-- 4. ADD THIS SCRIPT TO YOUR <script> SECTION -->
+<script>
+    function openLightbox(imgSrc) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = imgSrc;
+        lightbox.style.display = 'flex';
+    }
+</script>
+    <!-- CORE VALUES & CORE BELIEFS -->
+    <section id="values">
+        <h2 class="section-title">Core Values</h2>
+        <p class="section-subtitle">The non-negotiable spiritual anchors defining our internal character and ministerial culture</p>
+        
+        <div class="values-grid">
+            <div class="value-card"><h4>Fire</h4><p style="font-size: 0.85rem; color: #64748B;">Experiencing and honoring the direct transforming, filtering power of the Holy Ghost.</p></div>
+            <div class="value-card"><h4>Purpose</h4><p style="font-size: 0.85rem; color: #64748B;">Unlocking individual assignments tailored by divine cosmic blueprinting.</p></div>
+            <div class="value-card"><h4>Prayer</h4><p style="font-size: 0.85rem; color: #64748B;">Maintaining a consistent spiritual lifestyle of intercession and territorial governance.</p></div>
+            <div class="value-card"><h4>Leadership</h4><p style="font-size: 0.85rem; color: #64748B;">Serving societal frameworks with exceptional wisdom, functional humility, and integrity.</p></div>
+            <div class="value-card"><h4>Revival</h4><p style="font-size: 0.85rem; color: #64748B;">Pursuing permanent, long-scale spiritual awakening rather than occasional events.</p></div>
+            <div class="value-card"><h4>Excellence</h4><p style="font-size: 0.85rem; color: #64748B;">Honoring God by applying premium discipline, clean operations, and absolute quality.</p></div>
+        </div>
+
+        <div class="beliefs-block">
+            <h3>What We Stand For & Believe</h3>
+            <div class="beliefs-list">
+                <div class="belief-item"><i class="fas fa-scroll"></i> <span><strong>Jesus Christ is Lord:</strong> He represents the singular absolute foundation of true life overhaul and transformation.</span></div>
+                <div class="belief-item"><i class="fas fa-scroll"></i> <span><strong>Revival Dynamics:</strong> Territorial awakening directly mirrors the core urgent heartbeat of God.</span></div>
+                <div class="belief-item"><i class="fas fa-scroll"></i> <span><strong>The Holy Spirit:</strong> He empowers individual believers with active supernatural giftings for societal impact.</span></div>
+                <div class="belief-item"><i class="fas fa-scroll"></i> <span><strong>Prayer Altars:</strong> Persistent intercession resets the spiritual authority and breakthrough capacity of a region.</span></div>
+                <div class="belief-item"><i class="fas fa-scroll"></i> <span><strong>Systemic Infiltration:</strong> Kingdom dominion must systematically scale every active channel of human decision-making.</span></div>
+                <div class="belief-item"><i class="fas fa-scroll"></i> <span><strong>Youth Activation:</strong> The younger generation acts as the chosen primary operational instrument for global shift.</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARGET ASSIGNMENT -->
+    <section style="padding-top: 0;">
+        <h2 class="section-title">Our Target Assignment</h2>
+        <p class="section-subtitle">We are called to structure, model, and mobilize strategic agents globally</p>
+        
+        <div class="assignment-row">
+            <div class="target-box"><i class="fas fa-fire" style="display:block; font-size:1.5rem; margin-bottom:10px; color:var(--pink);"></i> Revival carriers</div>
+            <div class="target-box"><i class="fas fa-praying-hands" style="display:block; font-size:1.5rem; margin-bottom:10px; color:var(--skyblue);"></i> Intercessors</div>
+            <div class="target-box"><i class="fas fa-user-tie" style="display:block; font-size:1.5rem; margin-bottom:10px; color:var(--pink);"></i> Kingdom Leaders</div>
+            <div class="target-box"><i class="fas fa-globe" style="display:block; font-size:1.5rem; margin-bottom:10px; color:var(--skyblue);"></i> Nation Builders</div>
+        </div>
+    </section>
+
+    <!-- PROPHETIC DECLARATION BANNER -->
+    <div class="declaration-banner">
+        <div class="declaration-content">
+            <h2>The Corporate Declaration</h2>
+            <div class="declaration-line">"We are the generation with wings. We are rising beyond limitations."</div>
+            <div class="declaration-line">"We are built in fire. Sent with purpose. We are carriers of revival."</div>
+            <div class="declaration-line">"We refuse limitations. We refuse spiritual compromise."</div>
+            <div class="declaration-line" style="color: var(--dark); font-weight:800; margin-top:15px;">"We rise with kingdom authority to impact nations for the glory of God."</div>
+            <div class="declaration-badge">ALIFEROUS REVIVAL HUB</div>
+        </div>
+    </div>
+
+    <!-- MAIN FOOTER SECTION -->
+    <footer id="connect">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>ALIFEROUS <span>REVIVAL HUB</span></h3>
+                <p>A global apostolic movement and training ecosystem dedicated to raising active kingdom ambassadors, modeling marketplace reform, and driving systemic alignment under the unhindered fire of the Holy Spirit.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Hub Office Connection</h4>
+                <p style="margin-bottom: 10px; color: #94A3B8;"><i class="fas fa-phone-alt" style="color: var(--pink); margin-right: 10px;"></i> 0700003101</p>
+                <p style="margin-bottom: 10px; color: #94A3B8;"><i class="fas fa-envelope" style="color: var(--skyblue); margin-right: 10px;"></i> contact@aliferous.org</p>
+                <p style="color: #64748B; font-size: 0.85rem; margin-top: 15px;">Apostolic Alignment Hub • Kenya & Beyond</p>
+            </div>
+        </div>
+        
+        <hr style="border:0; border-top: 1px solid #1E293B; margin-bottom: 30px;">
+        <p style="font-size: 0.85rem; color: #64748B;">&copy; 2026 ALIFEROUS REVIVAL HUB. All Rights Reserved. Built in Fire. Sent to Transform.</p>
+    </footer>
+
+    <!-- FLOATING ACTIONS CONTAINER (LEFT CORNER) -->
+    <div class="floating-socials">
+        <a href="https://wa.me/254700003101" class="float-btn f-whatsapp" target="_blank" title="WhatsApp Channel Connection"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://facebook.com" class="float-btn f-facebook" target="_blank" title="Follow via Facebook Page"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://youtube.com" class="float-btn f-youtube" target="_blank" title="Subscribe via YouTube Live"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@aliferous.revival.hub?_r=1&_t=ZS-97c7QMVG2I0" class="float-btn f-tiktok" target="_blank" title="Follow via TikTok Stream"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <!-- INTERACTIVE CHATBOT WIDGET (RIGHT CORNER) -->
+    <div class="chat-widget">
+        <div class="chat-button" id="chat-toggle">
+            <i class="fas fa-comment-alt"></i>
+        </div>
+        <div class="chat-window" id="chat-box">
+            <div class="chat-header">
+                <span>Aliferous AI Core</span>
+                <i class="fas fa-times" id="chat-close" style="cursor:pointer; font-size: 1.1rem;"></i>
+            </div>
+            <div class="chat-body" id="chat-messages">
+                <div class="chat-msg msg-bot">
+                    Shalom and welcome to the Aliferous Portal! 🦅 I am your digital alignment assistant. How can I help you explore our structural catalogue today?
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" class="chat-input" id="chat-in" placeholder="Ask about Apostle Joshua, values, wings...">
+                <button class="chat-send" id="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CLIENT SCRIPT LOGIC ENGINE -->
+    <script>
+        // Responsive Navigation Control
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navList = document.getElementById('nav-list');
+        mobileToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => navList.classList.remove('active'));
+        });
+
+        // Chatbot Panel Frame Interface Toggle
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatClose = document.getElementById('chat-close');
+        const chatBox = document.getElementById('chat-box');
+
+        chatToggle.addEventListener('click', () => {
+            chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+        });
+        chatClose.addEventListener('click', () => {
+            chatBox.style.display = 'none';
+        });
+
+        // Conversational Bot Logic Engine
+        const chatIn = document.getElementById('chat-in');
+        const chatSendBtn = document.getElementById('chat-send-btn');
+        const chatMessages = document.getElementById('chat-messages');
+
+        function processBotResponse(rawText) {
+            let input = rawText.toLowerCase();
+            let reply = "Thank you for engaging with us. To experience the structural fire of this ministry firsthand, you are invited to join our upcoming territorial assemblies or reach our team directly at 0700003101.";
+
+            if (input.includes('founder') || input.includes('apostle') || input.includes('joshua') || input.includes('leader')) {
+                reply = "The ministry was founded and is led by Apostle Karami Evans Joshua—a passionate revivalist and apostolic voice committed to building carriers of presence and systemic transformers across nations.";
+            } else if (input.includes('meaning') || input.includes('aliferous') || input.includes('wings')) {
+                reply = "The word 'ALIFEROUS' is Greek-inspired and translates to 'to have wings'. It profiles a fearless generation soaring above limitations, operating with structural speed, vision, and dominion.";
+            } else if (input.includes('mountain') || input.includes('sphere') || input.includes('influence')) {
+                reply = "We focus strategically on 5 Core Mountains of Impact: Government (Governance with integrity), Schools/Education (Campus revivals), Business Industry (Marketplace ethics), Society (Cultural impact), and Families (Godly homes).";
+            } else if (input.includes('vision') || input.includes('mission') || input.includes('pillar')) {
+                reply = "Our Vision is: 'Impacting Systems and Territories.' Our operating Mission is: 'Built in Fire. Sent with Purpose.' Our fundamental pillars include Revival, Leadership, Discipleship, and Kingdom Influence.";
+            } else if (input.includes('value') || input.includes('believe') || input.includes('stand for')) {
+                reply = "Our core operational framework stands on Fire, Purpose, Prayer, Leadership, Revival, and Excellence. We believe Christ is the foundational stone and that prayer altars unlock structural territorial breakthrough.";
+            } else if (input.includes('hello') || input.includes('hi') || input.includes('shalom')) {
+                reply = "Shalom! I am fully equipped to guide you through our core parameters. Ask me about the structural meaning of Aliferous, our Founder, our Core Pillars, or the 5 Mountains of Impact!";
+            }
+
+            setTimeout(() => {
+                const botNode = document.createElement('div');
+                botNode.className = 'chat-msg msg-bot';
+                botNode.innerText = reply;
+                chatMessages.appendChild(botNode);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 550);
+        }
+
+        function dispatchUserMsg() {
+            const currentVal = chatIn.value.trim();
+            if (!currentVal) return;
+
+            const userNode = document.createElement('div');
+            userNode.className = 'chat-msg msg-user';
+            userNode.innerText = currentVal;
+            chatMessages.appendChild(userNode);
+
+            chatIn.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            processBotResponse(currentVal);
+        }
+
+        chatSendBtn.addEventListener('click', dispatchUserMsg);
+        chatIn.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') dispatchUserMsg();
+        });
+    </script>
+</body>
+</html>
